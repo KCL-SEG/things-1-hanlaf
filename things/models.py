@@ -2,7 +2,7 @@ from django.db import models
 from django.core.exceptions import ValidationError
 
 def validate_quantity(value):
-    if value <= 0 and value >= 100:
+    if value <= 0 or value >= 100:
         raise(ValidationError("Quantity needs to be a value from 0 to 100!"))
 
 class Thing(models.Model):
